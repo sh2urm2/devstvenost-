@@ -1,368 +1,1166 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>васаб, ніга </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VTK Trible Trailer Inc. — Freight Transportation</title>
+<style>
+  /* ─── RESET & BASE ─────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 15px;
+    color: #1f242e;
+    background: #fff;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  button, .btn { cursor: pointer; border: none; outline: none; font-family: inherit; }
+
+  /* ─── TOKENS ────────────────────────────────────────────────── */
+  :root {
+    --orange:   #f2730d;
+    --orange-dk:#c25a08;
+    --dark-bg:  #1a1f29;
+    --dark-bg2: #1f2430;
+    --dark-bg3: #212633;
+    --card-bg:  #fff;
+    --light:    #f5f5f5;
+    --muted:    #808080;
+    --border:   #d1d1d1;
+    --text:     #1f242e;
+  }
+
+  /* ─── TYPOGRAPHY ────────────────────────────────────────────── */
+  .label-sm { font-size: 10px; color: var(--muted); }
+  .label-md { font-size: 12px; color: var(--muted); }
+
+  /* ─── NAV ───────────────────────────────────────────────────── */
+  .nav-strip { height: 8px; background: var(--orange); }
+
+  nav {
+    background: var(--dark-bg);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 0;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: auto;
+  }
+  .nav-logo-box {
+    width: 44px; height: 44px;
+    background: var(--orange);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 11px; color: #fff;
+    flex-shrink: 0;
+  }
+  .nav-logo-text { line-height: 1.3; }
+  .nav-logo-text strong {
+    display: block;
+    font-size: 15px; font-weight: 700;
+    color: #fff; letter-spacing: 0.02em;
+  }
+  .nav-logo-text span { font-size: 10px; color: #999; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+    margin-right: 36px;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: #c7c7c7;
+    font-weight: 400;
+    transition: color .2s;
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .nav-links a:hover { color: #fff; }
+  .nav-links a.active {
+    color: var(--orange);
+    font-weight: 500;
+  }
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; left: 0;
+    width: 100%; height: 3px;
+    background: var(--orange);
+    border-radius: 2px;
+  }
+  .nav-cta {
+    background: var(--orange);
+    color: #fff;
+    font-size: 12px; font-weight: 500;
+    padding: 0 20px;
+    height: 38px;
+    border-radius: 4px;
+    display: flex; align-items: center;
+    transition: background .2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--orange-dk); }
+
+  /* ─── PAGE SECTIONS ─────────────────────────────────────────── */
+  .section { padding: 72px 64px; }
+  .section-sm { padding: 48px 64px; }
+
+  /* ─── PAGE HEADER ───────────────────────────────────────────── */
+  .page-header {
+    background: var(--dark-bg2);
+    padding: 20px 64px 24px;
+  }
+  .breadcrumb { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .page-header h1 { font-size: 22px; color: #fff; font-weight: 700; }
+  .page-header p  { font-size: 13px; color: #999; margin-top: 6px; }
+
+  /* ─── HERO ──────────────────────────────────────────────────── */
+  .hero {
+    background: var(--dark-bg3);
+    padding: 0 64px;
+    min-height: 360px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    align-items: center;
+    gap: 48px;
+    overflow: hidden;
+    position: relative;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; right: 0; top: 0;
+    width: 430px; height: 100%;
+    background: #242b38;
+    z-index: 0;
+  }
+  .hero-text { position: relative; z-index: 1; padding: 60px 0; }
+  .hero-text h1 {
+    font-size: 38px; font-weight: 700; color: #fff;
+    line-height: 1.1; letter-spacing: -0.01em;
+  }
+  .hero-text h1 span { color: var(--orange); display: block; }
+  .hero-text .sub {
+    font-size: 14px; color: #b8b8b8;
+    margin: 20px 0 6px;
+  }
+  .hero-text .services-line {
+    font-size: 12px; color: #8c8c8c; margin-bottom: 28px;
+  }
+  .hero-actions { display: flex; gap: 16px; }
+  .btn-primary {
+    background: var(--orange);
+    color: #fff; font-size: 13px; font-weight: 500;
+    padding: 0 28px; height: 46px; border-radius: 6px;
+    display: flex; align-items: center;
+    transition: background .2s;
+  }
+  .btn-primary:hover { background: var(--orange-dk); }
+  .btn-outline-dark {
+    background: #2e3342; border: 1px solid #737373;
+    color: #d1d1d1; font-size: 13px;
+    padding: 0 24px; height: 46px; border-radius: 6px;
+    display: flex; align-items: center;
+    transition: border-color .2s;
+  }
+  .btn-outline-dark:hover { border-color: #aaa; }
+  .hero-image {
+    position: relative; z-index: 1;
+    width: 380px; height: 310px;
+    background: #2e3345;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #737373; font-size: 11px;
+  }
+
+  /* ─── STATS BAR ─────────────────────────────────────────────── */
+  .stats-bar {
+    background: #f7f7f7;
+    padding: 20px 64px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+  }
+  .stat {
+    padding: 8px 0;
+    border-right: 1px solid #d1d1d1;
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-size: 28px; font-weight: 700;
+    color: var(--orange); line-height: 1;
+  }
+  .stat-label {
+    font-size: 12px; color: var(--muted);
+    margin-top: 6px;
+  }
+  .stat { padding-left: 40px; }
+  .stat:first-child { padding-left: 0; }
+
+  /* ─── SERVICES GRID ─────────────────────────────────────────── */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+    margin-top: 32px;
+  }
+  .service-card {
+    border: 1px solid #b3b3b3;
+    border-radius: 6px;
+    padding: 20px 16px 20px 16px;
+    display: flex; gap: 16px; align-items: flex-start;
+    transition: box-shadow .2s, border-color .2s;
+  }
+  .service-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 4px 16px rgba(242,115,13,.1);
+  }
+  .service-icon {
+    width: 44px; height: 54px; flex-shrink: 0;
+    background: #ededed; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+  }
+  .service-info h3 {
+    font-size: 13px; font-weight: 500;
+    margin-bottom: 8px;
+    font-family: 'Courier New', monospace;
+  }
+  .service-info .desc-lines span {
+    display: block; height: 8px;
+    background: #ededed; border-radius: 2px;
+    margin-bottom: 4px;
+  }
+  .service-info .desc-lines span:first-child { width: 100%; }
+  .service-info .desc-lines span:last-child  { width: 70%; }
+
+  /* ─── SECTION TITLE ─────────────────────────────────────────── */
+  .section-title { font-size: 20px; font-weight: 700; color: var(--text); }
+  .section-sub   { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* ─── SERVICES PAGE ─────────────────────────────────────────── */
+  .services-layout {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    gap: 24px;
+    padding: 24px 64px 48px;
+  }
+  .services-sidebar { display: flex; flex-direction: column; gap: 0; }
+  .sidebar-item {
+    padding: 16px 22px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background .15s;
+    margin-bottom: 4px;
+    border-left: 4px solid transparent;
+  }
+  .sidebar-item:hover { background: #f0f0f0; }
+  .sidebar-item.active {
+    background: #f2f5ff;
+    border-left-color: var(--orange);
+  }
+  .sidebar-item.active .item-name { color: var(--orange); font-weight: 500; }
+  .sidebar-item .item-name { font-size: 13px; color: var(--text); }
+  .sidebar-item .item-sub  { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .service-detail {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .service-detail-img {
+    width: 100%; height: 200px;
+    background: #c7c7c7;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--muted);
+  }
+  .service-detail-body { padding: 24px; }
+  .service-detail-body h2 {
+    font-size: 20px; font-weight: 700; margin-bottom: 6px;
+  }
+  .service-detail-body .tagline {
+    font-size: 13px; color: var(--muted); margin-bottom: 16px;
+  }
+  .detail-divider { height: 1px; background: #e0e0e0; margin: 16px 0; }
+  .detail-cols {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 24px;
+  }
+  .detail-desc h4 { font-size: 14px; font-weight: 500; margin-bottom: 12px; }
+  .desc-bar { height: 11px; background: #ededed; border-radius: 2px; margin-bottom: 6px; }
+  .advantages-list { margin-top: 20px; }
+  .advantages-list h4 { font-size: 13px; font-weight: 500; margin-bottom: 10px; }
+  .advantages-list li {
+    list-style: none;
+    font-size: 12px; color: var(--text);
+    padding: 4px 0 4px 18px;
+    position: relative;
+  }
+  .advantages-list li::before {
+    content: '';
+    position: absolute; left: 0; top: 8px;
+    width: 6px; height: 6px;
+    background: var(--orange); border-radius: 3px;
+  }
+  .detail-sidebar-box {
+    background: #f7f7f7; border-radius: 6px;
+    padding: 20px;
+  }
+  .detail-sidebar-box h4 { font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+  .spec-row { margin-bottom: 16px; }
+  .spec-row .spec-label { font-size: 11px; color: var(--muted); }
+  .spec-row .spec-val   { font-size: 12px; font-weight: 500; margin-top: 2px; }
+  .btn-orange-full {
+    width: 100%; height: 40px;
+    background: var(--orange); color: #fff;
+    font-size: 13px; font-weight: 500;
+    border-radius: 6px; margin-top: 20px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: background .2s;
+    border: none;
+  }
+  .btn-orange-full:hover { background: var(--orange-dk); }
+
+  /* ─── TRUCK GARAGE ───────────────────────────────────────────── */
+  .filter-bar {
+    background: #f5f5f5;
+    padding: 12px 64px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .filter-label { font-size: 12px; color: var(--muted); margin-right: 4px; }
+  .filter-btn {
+    height: 30px; padding: 0 18px;
+    border-radius: 4px; font-size: 12px;
+    cursor: pointer; transition: all .15s;
+    border: 1px solid #b3b3b3;
+    background: #fff; color: var(--text);
+  }
+  .filter-btn.active {
+    background: var(--orange); border-color: var(--orange);
+    color: #fff; font-weight: 500;
+  }
+  .filter-btn:hover:not(.active) { border-color: var(--orange); color: var(--orange); }
+
+  .trucks-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 16px;
+    padding: 24px 64px 48px;
+  }
+  .truck-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow .2s;
+  }
+  .truck-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); }
+  .truck-img {
+    width: 100%; height: 140px;
+    background: #ccc;
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; color: #808080;
+  }
+  .vtk-tag {
+    position: absolute; top: 12px; left: 12px;
+    background: var(--orange); color: #fff;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 3px;
+  }
+  .status-badge {
+    position: absolute; bottom: 12px; right: 12px;
+    height: 22px; padding: 0 12px;
+    border-radius: 11px; font-size: 10px; font-weight: 500;
+    display: flex; align-items: center;
+  }
+  .status-free     { background: #e0f7e8; color: #2e9e59; }
+  .status-transit  { background: #e5f0ff; color: #3d78c7; }
+  .status-service  { background: #faede0; color: #c26b1a; }
+
+  .truck-info { padding: 12px 14px; }
+  .truck-name { font-size: 12px; font-weight: 700; margin-bottom: 2px; }
+  .truck-type { font-size: 11px; color: var(--muted); }
+  .truck-divider { height: 1px; background: #e0e0e0; margin: 8px 0; }
+  .truck-route { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+  .truck-specs {
+    background: #ededed; border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 10px; color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .truck-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .btn-detail {
+    height: 26px; border-radius: 4px;
+    border: 1px solid #b3b3b3; background: #fff;
+    font-size: 10px; color: var(--text);
+    cursor: pointer; transition: all .15s;
+  }
+  .btn-detail:hover { border-color: var(--orange); color: var(--orange); }
+  .btn-book {
+    height: 26px; border-radius: 4px;
+    background: var(--orange); border: none;
+    font-size: 10px; font-weight: 500; color: #fff;
+    cursor: pointer; transition: background .15s;
+  }
+  .btn-book:hover { background: var(--orange-dk); }
+
+  /* ─── CONTACTS PAGE ─────────────────────────────────────────── */
+  .contacts-layout {
+    display: grid;
+    grid-template-columns: 1fr 540px;
+    gap: 32px;
+    padding: 24px 64px 48px;
+  }
+  .form-box {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px;
+  }
+  .form-box h2 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .form-box .form-sub { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
+  .form-divider { height: 1px; background: #e0e0e0; margin-bottom: 20px; }
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .form-field { display: flex; flex-direction: column; gap: 5px; }
+  .form-field label { font-size: 11px; font-weight: 500; }
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    height: 36px; padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 11px; font-family: inherit;
+    color: var(--muted);
+    outline: none;
+    transition: border-color .15s;
+  }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder { color: #bbb; }
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus { border-color: var(--orange); color: var(--text); }
+  .form-field textarea {
+    height: 72px; resize: none; padding: 10px 12px; line-height: 1.5;
+  }
+  .form-section-title {
+    font-size: 14px; font-weight: 700;
+    margin: 20px 0 12px;
+  }
+  .btn-submit {
+    width: 100%; height: 42px;
+    background: var(--orange); color: #fff;
+    font-size: 14px; font-weight: 500;
+    border-radius: 6px; border: none;
+    cursor: pointer; margin-top: 16px;
+    transition: background .2s;
+  }
+  .btn-submit:hover { background: var(--orange-dk); }
+
+  .contacts-sidebar { display: flex; flex-direction: column; gap: 16px; }
+  .office-card {
+    background: var(--dark-bg);
+    border-radius: 8px; padding: 24px;
+  }
+  .office-card .label {
+    font-size: 11px; font-weight: 500;
+    color: var(--orange); margin-bottom: 8px;
+    letter-spacing: .06em;
+  }
+  .office-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+  .office-card .addr { font-size: 12px; color: #707070; line-height: 1.8; }
+  .office-hours {
+    background: #1f2733;
+    border-radius: 4px;
+    padding: 10px 14px; margin-top: 14px;
+    font-size: 11px; color: #666;
+  }
+  .office-hours strong { color: var(--orange); }
+
+  .channels-box h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; }
+  .channel-row {
+    background: var(--light);
+    border-radius: 4px; padding: 10px 14px;
+    margin-bottom: 6px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .channel-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--orange); flex-shrink: 0;
+  }
+  .channel-label { font-size: 11px; color: var(--muted); }
+  .channel-val   { font-size: 12px; font-weight: 700; color: var(--orange); }
+
+  .map-box h3 { font-size: 14px; font-weight: 700; margin-bottom: 10px; }
+  .map-placeholder {
+    width: 100%; height: 100px;
+    background: #d0d8e8; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; color: var(--muted);
+  }
+  .dot-row {
+    border: 1px solid var(--border);
+    border-radius: 4px; padding: 8px 14px;
+    font-size: 10px; color: var(--muted);
+    margin-top: 10px;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────────────────── */
+  footer {
+    background: var(--dark-bg);
+    padding: 24px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .footer-left strong { font-size: 13px; color: #fff; display: block; margin-bottom: 6px; }
+  .footer-left span   { font-size: 10px; color: #808080; display: block; line-height: 1.8; }
+  .footer-right {
+    font-size: 10px; color: #808080;
+    display: flex; gap: 18px; align-items: center;
+    flex-wrap: wrap; justify-content: flex-end;
+  }
+  .footer-right a { transition: color .15s; }
+  .footer-right a:hover { color: var(--orange); }
+
+  /* ─── PAGE TABS ─────────────────────────────────────────────── */
+  .page-tabs {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    padding: 0 64px;
+    background: #fff;
+    position: sticky;
+    top: 68px;
+    z-index: 90;
+  }
+  .tab-btn {
+    padding: 14px 24px;
+    font-size: 14px; font-weight: 500;
+    color: var(--muted); cursor: pointer;
+    border: none; background: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--orange); border-bottom-color: var(--orange); }
+
+  /* ─── PAGE SECTIONS VISIBILITY ──────────────────────────────── */
+  .page { display: none; }
+  .page.visible { display: block; }
+
+</style>
 </head>
 <body>
 
-    <style>
-      html {
-        scroll-behavior: smooth;
+<!-- ═══ TOP NAV ════════════════════════════════════════════════ -->
+<div class="nav-strip"></div>
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-box">VTK</div>
+    <div class="nav-logo-text">
+      <strong>TRIBLE TRAILER INC.</strong>
+      <span>Transportation &amp; Logistics</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="showPage('home',this)">Main page</a></li>
+    <li><a href="#" onclick="showPage('services',this)">Services</a></li>
+    <li><a href="#" onclick="showPage('garage',this)">Truck Garage</a></li>
+    <li><a href="#" onclick="showPage('about',this)">About us</a></li>
+    <li><a href="#" onclick="showPage('contacts',this)">Contacts</a></li>
+  </ul>
+  <a href="#" class="nav-cta" onclick="showPage('contacts',null);return false;">Get a quota</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: HOME                                                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page visible" id="page-home">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>RELIABLE DELIVERY<span>THROUGHOUT EUROPE</span></h1>
+      <p class="sub">Trible Trailer Inc. — your trusted partner in freight transportation.</p>
+      <p class="services-line">FTL · LTL · Reefer · Flatbed · Hazmat · Cross-Border</p>
+      <div class="hero-actions">
+        <a href="#" class="btn-primary" onclick="showPage('contacts',null);return false;">Send cargo</a>
+        <a href="#" class="btn-outline-dark" onclick="showPage('contacts',null);return false;">Track cargo</a>
+      </div>
+    </div>
+    <div class="hero-image">[ PHOTO TRUCK ]</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years on the market</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">2 400+</div>
+      <div class="stat-label">Jobs per month</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">48</div>
+      <div class="stat-label">Europe + Great Britain</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">99.2%</div>
+      <div class="stat-label">On-time delivery</div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="section">
+    <div class="section-title">Our services</div>
+    <div class="section-sub">A full range of freight services for your business</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🚛</div>
+        <div class="service-info">
+          <h3>FTL — Full Truck Load</h3>
+          <div class="desc-lines"><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📦</div>
+        <div class="service-info">
+          <h3>LTL — Less Truck Load</h3>
+          <div class="desc-lines"><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">❄️</div>
+        <div class="service-info">
+          <h3>Refrigerated transportation</h3>
+          <div class="desc-lines"><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏗️</div>
+        <div class="service-info">
+          <h3>Flatbed / Oversized</h3>
+          <div class="desc-lines"><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚠️</div>
+        <div class="service-info">
+          <h3>Dangerous cargo (Hazmat)</h3>
+          <div class="desc-lines"><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌍</div>
+        <div class="service-info">
+          <h3>International</h3>
+          <div class="desc-lines"><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /page-home -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: SERVICES                                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-services">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / Services</div>
+    <h1>Transport services</h1>
+    <p>We transport any cargo to any point in Europe</p>
+  </div>
+
+  <div class="services-layout">
+    <!-- Sidebar -->
+    <div class="services-sidebar">
+      <div class="sidebar-item active" onclick="selectService(this,'ftl')">
+        <div class="item-name">FTL Transportation</div>
+        <div class="item-sub">Viewing</div>
+      </div>
+      <div class="sidebar-item" onclick="selectService(this,'ltl')">
+        <div class="item-name">LTL Transportation</div>
+      </div>
+      <div class="sidebar-item" onclick="selectService(this,'reefer')">
+        <div class="item-name">Refrigerator</div>
+      </div>
+      <div class="sidebar-item" onclick="selectService(this,'flatbed')">
+        <div class="item-name">Flatbed</div>
+      </div>
+      <div class="sidebar-item" onclick="selectService(this,'hazmat')">
+        <div class="item-name">Hazmat</div>
+      </div>
+      <div class="sidebar-item" onclick="selectService(this,'cross')">
+        <div class="item-name">Cross-border</div>
+      </div>
+    </div>
+
+    <!-- Detail panel -->
+    <div class="service-detail">
+      <div class="service-detail-img">[ PHOTO: FTL TRANSPORTATION — 15 m TRAILER ]</div>
+      <div class="service-detail-body">
+        <h2>FTL — Full Truckload Transportation</h2>
+        <p class="tagline">Ideal for large loads from 15,000 to 45,000 kilograms</p>
+        <div class="detail-divider"></div>
+        <div class="detail-cols">
+          <div class="detail-desc">
+            <h4>Service description</h4>
+            <div class="desc-bar" style="width:100%"></div>
+            <div class="desc-bar" style="width:100%"></div>
+            <div class="desc-bar" style="width:100%"></div>
+            <div class="desc-bar" style="width:100%"></div>
+            <div class="desc-bar" style="width:60%"></div>
+            <div class="advantages-list">
+              <h4>Advantages of FTL:</h4>
+              <ul>
+                <li>Direct delivery without overloading</li>
+                <li>Lower risk of damage</li>
+                <li>Fixed price per job</li>
+                <li>Faster delivery</li>
+              </ul>
+            </div>
+          </div>
+          <div class="detail-sidebar-box">
+            <h4>Service details</h4>
+            <div class="detail-divider"></div>
+            <div class="spec-row">
+              <div class="spec-label">Load capacity:</div>
+              <div class="spec-val">to 45 000 kg</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Volume:</div>
+              <div class="spec-val">to 70 m³</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Trailer length:</div>
+              <div class="spec-val">13.8 m / 15 m</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Routes:</div>
+              <div class="spec-val">Germany, France, Poland &amp; more</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Delivery time:</div>
+              <div class="spec-val">1–5 business days</div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-label">Tracking:</div>
+              <div class="spec-val">GPS real time</div>
+            </div>
+            <button class="btn-orange-full" onclick="showPage('contacts',null)">Request a quota for FTL</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-services -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: TRUCK GARAGE                                          -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-garage">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / Truck Garage</div>
+    <h1>Our Truck Garage</h1>
+  </div>
+
+  <div class="filter-bar">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" onclick="filterTrucks(this,'all')">All (47)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'dryvan')">Dry Van (24)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'reefer')">Reefer (12)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'flatbed')">Flatbed (8)</button>
+    <button class="filter-btn" onclick="filterTrucks(this,'stepdeck')">Step Deck (3)</button>
+  </div>
+
+  <div class="trucks-grid" id="trucks-grid">
+
+    <div class="truck-card" data-type="dryvan">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-free">Вільна</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">Scania R 500 4X2</div>
+        <div class="truck-type">Dry Van · 53' — 45 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">Job: IL → TX</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="reefer">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-transit">В дорозі</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">Volvo FH 500 Globetrotter</div>
+        <div class="truck-type">Reefer · 48' — 43 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">Рейс: FL → CA</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="flatbed">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-service">Техобслуг.</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">Scania S 770 6x4</div>
+        <div class="truck-type">Flatbed · 48' — 48 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">Рейс: OH → WA</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="dryvan">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-free">Вільна</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">DAF XF105 410 6X4</div>
+        <div class="truck-type">Dry Van · 53' — 45 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">База: Chicago, IL</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="reefer">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-transit">В дорозі</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">MAN TGX 18.510 6x2/4</div>
+        <div class="truck-type">Reefer · 53' — 43 500 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">Рейс: TX → NY</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="stepdeck">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-free">Вільна</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">Mercedes ACTROS 1848 4x2</div>
+        <div class="truck-type">Step Deck · 48' — 46 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">База: Dallas, TX</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="dryvan">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-transit">В дорозі</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">Renault T 480 4X2</div>
+        <div class="truck-type">Dry Van · 53' — 45 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">Рейс: CA → MN</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="truck-card" data-type="flatbed">
+      <div class="truck-img">
+        <div class="vtk-tag">VTK</div>
+        [ TRUCK PHOTO ]
+        <span class="status-badge status-free">Вільна</span>
+      </div>
+      <div class="truck-info">
+        <div class="truck-name">Iveco S-WAY 570 6x2</div>
+        <div class="truck-type">Flatbed · 40' — 48 000 lbs</div>
+        <div class="truck-divider"></div>
+        <div class="truck-route">Рейс: TX → TN</div>
+        <div class="truck-specs">GPS ● ABS ● ELD ● Dashcam</div>
+        <div class="truck-actions">
+          <button class="btn-detail">Деталі</button>
+          <button class="btn-book">Забронювати</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /page-garage -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: ABOUT (placeholder)                                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-about">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / About us</div>
+    <h1>About VTK Trible Trailer Inc.</h1>
+    <p>15+ years of reliable freight transportation across Europe</p>
+  </div>
+  <div class="section">
+    <div style="background:#f5f5f5;border-radius:8px;padding:40px;text-align:center;color:#999;font-size:14px;">
+      [ About page content — coming soon ]
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- PAGE: CONTACTS                                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="page" id="page-contacts">
+  <div class="page-header">
+    <div class="breadcrumb">Main page / Contacts</div>
+    <h1>Contact us</h1>
+  </div>
+
+  <div class="contacts-layout">
+    <!-- Form -->
+    <div class="form-box">
+      <h2>Get a freight quota</h2>
+      <p class="form-sub">Fill in the form — we'll respond within 2 hours</p>
+      <div class="form-divider"></div>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label>Cargo type *</label>
+          <select>
+            <option>Dry Van / Reefer / Flatbed / Hazmat</option>
+            <option>Dry Van</option>
+            <option>Reefer</option>
+            <option>Flatbed</option>
+            <option>Hazmat</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>From (Origin) *</label>
+          <input type="text" placeholder="City, State / Province">
+        </div>
+        <div class="form-field">
+          <label>To (Destination) *</label>
+          <input type="text" placeholder="City, State / Province">
+        </div>
+        <div class="form-field">
+          <label>Dispatch date *</label>
+          <input type="date">
+        </div>
+        <div class="form-field">
+          <label>Cargo weight (kg) *</label>
+          <input type="text" placeholder="e.g. 12 000">
+        </div>
+        <div class="form-field">
+          <label>Number of loading spots</label>
+          <input type="text" placeholder="e.g. 12 pallets">
+        </div>
+      </div>
+
+      <div class="form-field" style="margin-bottom:0">
+        <label>Additional requirements / comment</label>
+        <textarea placeholder="Temperature regime, hazmat class, special instructions..."></textarea>
+      </div>
+
+      <div class="form-section-title">Contact information</div>
+      <div class="form-divider"></div>
+      <div class="form-grid">
+        <div class="form-field">
+          <label>Full name *</label>
+          <input type="text" placeholder="John Smith">
+        </div>
+        <div class="form-field">
+          <label>Company</label>
+          <input type="text" placeholder="Your company name">
+        </div>
+        <div class="form-field">
+          <label>Email *</label>
+          <input type="email" placeholder="email@company.com">
+        </div>
+        <div class="form-field">
+          <label>Phone *</label>
+          <input type="tel" placeholder="+1 (555) 000-0000">
+        </div>
+      </div>
+
+      <button class="btn-submit">Send quota request</button>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="contacts-sidebar">
+      <div class="office-card">
+        <div class="label">HEADQUARTERS</div>
+        <h3>VTK Trible Trailer Inc.</h3>
+        <div class="addr">
+          8432 Commerce Pkwy, Suite 200<br>
+          Chicago, IL 60601<br>
+          USA
+        </div>
+        <div class="office-hours">
+          Working hours: Mon–Fri 06:00–22:00 CST<br>
+          <strong>Dispatcher 24/7: +1 (773) 555-VTK1</strong>
+        </div>
+      </div>
+
+      <div class="channels-box">
+        <h3>Contacts</h3>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div>
+            <div class="channel-label">General phone</div>
+            <div class="channel-val">+1 (773) 555-0100</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div>
+            <div class="channel-label">Dispatcher 24/7</div>
+            <div class="channel-val">+1 (773) 555-8247</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div>
+            <div class="channel-label">Cargo tracking</div>
+            <div class="channel-val">tracking@vtktrible.com</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div>
+            <div class="channel-label">Accounting / Invoices</div>
+            <div class="channel-val">billing@vtktrible.com</div>
+          </div>
+        </div>
+        <div class="channel-row">
+          <div class="channel-dot"></div>
+          <div>
+            <div class="channel-label">Vacancies / Drivers</div>
+            <div class="channel-val">hr@vtktrible.com</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <h3>Find us</h3>
+        <div class="map-placeholder">[ MAP — Google Maps: Chicago, IL ]</div>
+        <div class="dot-row">DOT# 4521890 | MC# 1187334 | FMCSA Registered | Bonded &amp; Insured</div>
+      </div>
+    </div>
+  </div>
+</div><!-- /page-contacts -->
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- FOOTER                                                      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-left">
+    <strong>TRIBLE TRAILER INC.</strong>
+    <span>DOT# 4521890  |  MC# 1187334  |  USDOT Licensed &amp; Insured</span>
+    <span>© 2025 Trible Trailer Inc. All rights reserved.</span>
+  </div>
+  <div class="footer-right">
+    <a href="#">Services</a>
+    <a href="#">Trucks</a>
+    <a href="#">About us</a>
+    <a href="#">Contacts</a>
+    <a href="#">Vacancies</a>
+    <a href="#">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  // ─── PAGE NAVIGATION ──────────────────────────────────────────
+  function showPage(pageId, linkEl) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
+    document.getElementById('page-' + pageId).classList.add('visible');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    if (linkEl) linkEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ─── FILTER TRUCKS ─────────────────────────────────────────────
+  function filterTrucks(btn, type) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.truck-card').forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>васаб, ніга, це моє перше порно</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="#achievments"> Досягнення </a>
-          </li>
-          <li>
-            <a href="#targets">Цілі</a>
-          </li>
-          <li>
-            <a href="#contacts"> Контакти </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <picture>
-          <source
-            media="(min-width: 1200px)"
-            srcset="https://picsum.photos/1200/300"
-          />
-          <source
-            media="(min-width: 800px)"
-            srcset="https://picsum.photos/800/400"
-          />
-          <source
-            media="(min-width: 600px)"
-            srcset="https://picsum.photos/600/600"
-          />
-          <img
-            src="https://picsum.photos/1400/400"
-            style="width: auto"
-            alt="banner"
-          />
-        </picture>
-      </div>
-    </header>
+    });
+  }
 
-    <main>
-      <!-- Секція 1 мої досягнення -->
-      <section id="achievments">
-        <h2>Мої досягнення</h2>
-        <article>
-          <h3>Досягнення 1</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            minima aperiam excepturi dolore exercitationem nisi eligendi sint
-            obcaecati perspiciatis, architecto, ex et voluptates distinctio hic,
-            rerum inventore eum corrupti vero velit quis? Praesentium fuga
-            reiciendis dicta nihil fugit, dignissimos tenetur illo, maiores
-            tempora perferendis quos odio rerum! Quisquam, minus magni.
-          </p>
-          <p>
-            <i> дата отримання: 12.03.26 </i>
-          </p>
-          <div>
-            <button type="button">Детальніше</button>
-          </div>
-        </article>
-        <article>
-          <h3>Досягнення 2</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            minima aperiam excepturi dolore exercitationem nisi eligendi sint
-            obcaecati perspiciatis, architecto, ex et voluptates distinctio hic,
-            rerum inventore eum corrupti vero velit quis? Praesentium fuga
-            reiciendis dicta nihil fugit, dignissimos tenetur illo, maiores
-            tempora perferendis quos odio rerum! Quisquam, minus magni.
-          </p>
-          <p>
-            <i> дата отримання: 12.03.26 </i>
-          </p>
-          <div>
-            <button type="button">Детальніше</button>
-          </div>
-        </article>
-        <article>
-          <h3>Досягнення 3</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            minima aperiam excepturi dolore exercitationem nisi eligendi sint
-            obcaecati perspiciatis, architecto, ex et voluptates distinctio hic,
-            rerum inventore eum corrupti vero velit quis? Praesentium fuga
-            reiciendis dicta nihil fugit, dignissimos tenetur illo, maiores
-            tempora perferendis quos odio rerum! Quisquam, minus magni.
-          </p>
-          <p>
-            <i> дата отримання: 12.03.26 </i>
-          </p>
-          <div>
-            <button type="button">Детальніше</button>
-          </div>
-        </article>
-      </section>
-
-      <!-- Секція 2 мої цілі -->
-      <section id="targets">
-        <h2>Мої цілі</h2>
-        <article>
-          <h3>Ціль 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            eum velit iure explicabo quos? Tempora in exercitationem
-            reprehenderit ipsum dignissimos.
-          </p>
-          <p><i>дедлайн: 2027</i></p>
-        </article>
-        <article>
-          <h3>Ціль 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            eum velit iure explicabo quos? Tempora in exercitationem
-            reprehenderit ipsum dignissimos.
-          </p>
-          <p><i>дедлайн: 2027</i></p>
-        </article>
-      </section>
-
-      <section id="gallery">
-        <h2>Галерея</h2>
-        <img src="https://picsum.photos/400/400" alt="image1" />
-        <img src="https://picsum.photos/400/400" alt="image2" />
-        <img src="https://picsum.photos/400/400" alt="image3" />
-      </section>
-    </main>
-
-    <!-- Бічне меню -->
-    <aside>
-      <h2>Бічне меню</h2>
-      <ul>
-        <li>пункт 1</li>
-        <li>пункт 2</li>
-        <li>пункт 3</li>
-      </ul>
-    </aside>
-
-    <footer>
-      <div>
-        <!-- форма опитування -->
-        <form>
-          <label for="email">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Введіть пошту"
-            />
-          </label>
-          <input type="button" value="Підписатись на розсилку" />
-        </form>
-      </div>
-
-      <div>
-        <!-- контакти-->
-        <ul id="contacts">
-          <li>0661234567</li>
-          <li>email@example.com</li>
-        </ul>
-      </div>
-
-      <p>&copy; My portfolio</p>
-    </footer>
-  </body>
-</html>
-
+  // ─── SERVICE SIDEBAR ───────────────────────────────────────────
+  function selectService(el, id) {
+    document.querySelectorAll('.sidebar-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.item-sub') && (i.querySelector('.item-sub').textContent = '');
+    });
+    el.classList.add('active');
+    let sub = el.querySelector('.item-sub');
+    if (!sub) { sub = document.createElement('div'); sub.className = 'item-sub'; el.appendChild(sub); }
+    sub.textContent = 'Viewing';
+  }
+</script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>васаб, ніга </title>
-</head>
-<body>
-
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>васаб, ніга, це моє</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="#achievments"> Досягнення </a>
-          </li>
-          <li>
-            <a href="#targets">Цілі</a>
-          </li>
-          <li>
-            <a href="#contacts"> Контакти </a>
-          </li>
-        </ul>
-      </nav>
-      <div>
-        <picture>
-          <source
-            media="(min-width: 1200px)"
-            srcset="https://picsum.photos/1200/300"
-          />
-          <source
-            media="(min-width: 800px)"
-            srcset="https://picsum.photos/800/400"
-          />
-          <source
-            media="(min-width: 600px)"
-            srcset="https://picsum.photos/600/600"
-          />
-          <img
-            src="https://picsum.photos/1400/400"
-            style="width: auto"
-            alt="banner"
-          />
-        </picture>
-      </div>
-    </header>
-
-    <main>
-      <!-- Секція 1 мої досягнення -->
-      <section id="achievments">
-        <h2>Мої досягнення</h2>
-        <article>
-          <h3>Досягнення 1</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            minima aperiam excepturi dolore exercitationem nisi eligendi sint
-            obcaecati perspiciatis, architecto, ex et voluptates distinctio hic,
-            rerum inventore eum corrupti vero velit quis? Praesentium fuga
-            reiciendis dicta nihil fugit, dignissimos tenetur illo, maiores
-            tempora perferendis quos odio rerum! Quisquam, minus magni.
-          </p>
-          <p>
-            <i> дата отримання: 12.03.26 </i>
-          </p>
-          <div>
-            <button type="button">Детальніше</button>
-          </div>
-        </article>
-        <article>
-          <h3>Досягнення 2</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            minima aperiam excepturi dolore exercitationem nisi eligendi sint
-            obcaecati perspiciatis, architecto, ex et voluptates distinctio hic,
-            rerum inventore eum corrupti vero velit quis? Praesentium fuga
-            reiciendis dicta nihil fugit, dignissimos tenetur illo, maiores
-            tempora perferendis quos odio rerum! Quisquam, minus magni.
-          </p>
-          <p>
-            <i> дата отримання: 12.03.26 </i>
-          </p>
-          <div>
-            <button type="button">Детальніше</button>
-          </div>
-        </article>
-        <article>
-          <h3>Досягнення 3</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            minima aperiam excepturi dolore exercitationem nisi eligendi sint
-            obcaecati perspiciatis, architecto, ex et voluptates distinctio hic,
-            rerum inventore eum corrupti vero velit quis? Praesentium fuga
-            reiciendis dicta nihil fugit, dignissimos tenetur illo, maiores
-            tempora perferendis quos odio rerum! Quisquam, minus magni.
-          </p>
-          <p>
-            <i> дата отримання: 12.03.26 </i>
-          </p>
-          <div>
-            <button type="button">Детальніше</button>
-          </div>
-        </article>
-      </section>
-
-      <!-- Секція 2 мої цілі -->
-      <section id="targets">
-        <h2>Мої цілі</h2>
-        <article>
-          <h3>Ціль 1</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            eum velit iure explicabo quos? Tempora in exercitationem
-            reprehenderit ipsum dignissimos.
-          </p>
-          <p><i>дедлайн: 2027</i></p>
-        </article>
-        <article>
-          <h3>Ціль 2</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            eum velit iure explicabo quos? Tempora in exercitationem
-            reprehenderit ipsum dignissimos.
-          </p>
-          <p><i>дедлайн: 2027</i></p>
-        </article>
-      </section>
-
-      <section id="gallery">
-        <h2>Галерея</h2>
-        <img src="https://picsum.photos/400/400" alt="image1" />
-        <img src="https://picsum.photos/400/400" alt="image2" />
-        <img src="https://picsum.photos/400/400" alt="image3" />
-      </section>
-    </main>
-
-    <!-- Бічне меню -->
-    <aside>
-      <h2>Бічне меню</h2>
-      <ul>
-        <li>пункт 1</li>
-        <li>пункт 2</li>
-        <li>пункт 3</li>
-      </ul>
-    </aside>
-
-    <footer>
-      <div>
-        <!-- форма опитування -->
-        <form>
-          <label for="email">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Введіть пошту"
-            />
-          </label>
-          <input type="button" value="Підписатись на розсилку" />
-        </form>
-      </div>
-
-      <div>
-        <!-- контакти-->
-        <ul id="contacts">
-          <li>0661234567</li>
-          <li>email@example.com</li>
-        </ul>
-      </div>
-
-      <p>&copy; My portfolio</p>
-    </footer>
-  </body>
-</html>
-
-</body>
->>>>>>> d4aea996be5076d5db433f698ee166c67a8ff144
 </html>
