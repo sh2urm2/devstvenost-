@@ -579,13 +579,13 @@
     document.body.style.overflow = open ? 'hidden' : '';
   }
 
-  <!--function filterTrucks(btn, type) {
+  function filterTrucks(btn, type) {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.truck-card').forEach(card => {
       card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
     });
-  }-->
+  }
 
   function selectService(el, id) {
     document.querySelectorAll('.sidebar-item').forEach(i => {
@@ -598,6 +598,6 @@
     if (!sub) { sub = document.createElement('div'); sub.className = 'item-sub'; el.appendChild(sub); }
     sub.textContent = 'Viewing';
   }
-</script>-->
+</script>
 </body>
 </html>
