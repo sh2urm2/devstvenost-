@@ -32,9 +32,16 @@
 
   
   <button class="hamburger" id="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
+    <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke-width="1.5"
+    stroke="currentColor"
+    width="24"
+    height="24"
+    >
+  </svg>
   </button>
 </nav>
 
@@ -554,7 +561,7 @@
   </div>
 </footer>
 
-<script>
+<!--<script>
   function showPage(pageId, linkEl) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('visible'));
     document.getElementById('page-' + pageId).classList.add('visible');
@@ -598,6 +605,6 @@
     if (!sub) { sub = document.createElement('div'); sub.className = 'item-sub'; el.appendChild(sub); }
     sub.textContent = 'Viewing';
   }
-</script>
+</script>-->
 </body>
 </html>
