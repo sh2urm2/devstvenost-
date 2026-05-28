@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — VTK Trible Trailer Inc.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="nav-strip"></div>
+
+<header class="header">
+  <div class="nav-logo">
+    <div class="nav-logo-box">VTK</div>
+    <div class="nav-logo-text">
+      <strong>TRIBLE TRAILER INC.</strong>
+      <span>Transportation &amp; Logistics</span>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Main page</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a href="garage.html">Truck Garage</a></li>
+      <li><a href="about.html">About us</a></li>
+      <li><a href="checkout.html">Contacts</a></li>
+    </ul>
+  </nav>
+  <div class="user-actions">
+    <a href="checkout.html" class="btn btn-cart">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+           stroke-width="1.5" stroke="currentColor" width="18" height="18">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
+      </svg>
+      Get a Quote
+    </a>
+  </div>
+  <button class="menu-toggle" aria-label="Open menu">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+         stroke-width="2" stroke="currentColor" width="24" height="24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+    </svg>
+  </button>
+</header>
+
+<div class="page-header">
+  <p class="breadcrumb"><a href="index.html">Main page</a> / Services</p>
+  <h1>Transport Services</h1>
+  <p>We transport any cargo to any point in Europe</p>
+</div>
+
+<main>
+  <!-- Lab 05: CSS Grid — sidebar (250px) + content (1fr) -->
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h3>Service Types</h3>
+      <ul>
+        <li><a href="#ftl" class="sidebar-link active">🚛 FTL Transportation</a></li>
+        <li><a href="#ltl" class="sidebar-link">📦 LTL Transportation</a></li>
+        <li><a href="#reefer" class="sidebar-link">❄️ Refrigerated</a></li>
+        <li><a href="#flatbed" class="sidebar-link">🏗️ Flatbed / Oversized</a></li>
+        <li><a href="#hazmat" class="sidebar-link">⚠️ Hazmat</a></li>
+        <li><a href="#cross" class="sidebar-link">🌍 Cross-Border</a></li>
+      </ul>
+    </aside>
+
+    <section class="products-content">
+
+      <!-- FTL -->
+      <div class="service-detail-card" id="ftl">
+        <div class="service-detail-img">[ PHOTO: FTL — 15m TRAILER ]</div>
+        <div class="service-detail-body">
+          <h2>FTL — Full Truckload Transportation</h2>
+          <p class="svc-tagline">Ideal for large loads from 15,000 to 45,000 kilograms</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p>FTL transportation provides a dedicated truck exclusively for your cargo. The trailer travels directly from pickup to delivery without intermediate stops, minimizing handling risk and transit time.</p>
+              <h4 style="margin-top:1.25rem;">Advantages:</h4>
+              <ul class="advantages-list">
+                <li>Direct delivery without reloading</li>
+                <li>Lower risk of damage</li>
+                <li>Fixed price per shipment</li>
+                <li>Faster transit times</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div class="spec-row"><span class="spec-label">Load capacity:</span><span class="spec-val">up to 45,000 kg</span></div>
+              <div class="spec-row"><span class="spec-label">Volume:</span><span class="spec-val">up to 70 m³</span></div>
+              <div class="spec-row"><span class="spec-label">Trailer length:</span><span class="spec-val">13.8 m / 15 m</span></div>
+              <div class="spec-row"><span class="spec-label">Routes:</span><span class="spec-val">Germany, France, Poland &amp; more</span></div>
+              <div class="spec-row"><span class="spec-label">Delivery time:</span><span class="spec-val">1–5 business days</span></div>
+              <div class="spec-row"><span class="spec-label">Tracking:</span><span class="spec-val">GPS real-time</span></div>
+              <a href="checkout.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Request FTL Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LTL -->
+      <div class="service-detail-card" id="ltl">
+        <div class="service-detail-img">[ PHOTO: LTL — GROUPAGE ]</div>
+        <div class="service-detail-body">
+          <h2>LTL — Less-than-Truckload Transportation</h2>
+          <p class="svc-tagline">Cost-effective groupage solution for smaller shipments</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p>LTL combines cargo from multiple clients into a single truck, reducing costs for each shipper. Ideal for shipments between 100 and 10,000 kg that do not require full truck capacity.</p>
+              <h4 style="margin-top:1.25rem;">Advantages:</h4>
+              <ul class="advantages-list">
+                <li>Lower cost per kilogram</li>
+                <li>Flexible scheduling</li>
+                <li>Weekly departures</li>
+                <li>Full cargo insurance</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div class="spec-row"><span class="spec-label">Load capacity:</span><span class="spec-val">100–10,000 kg</span></div>
+              <div class="spec-row"><span class="spec-label">Volume:</span><span class="spec-val">up to 33 m³</span></div>
+              <div class="spec-row"><span class="spec-label">Frequency:</span><span class="spec-val">Weekly departures</span></div>
+              <div class="spec-row"><span class="spec-label">Routes:</span><span class="spec-val">All EU countries</span></div>
+              <div class="spec-row"><span class="spec-label">Delivery time:</span><span class="spec-val">3–10 business days</span></div>
+              <div class="spec-row"><span class="spec-label">Tracking:</span><span class="spec-val">Online portal</span></div>
+              <a href="checkout.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Request LTL Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- REEFER -->
+      <div class="service-detail-card" id="reefer">
+        <div class="service-detail-img">[ PHOTO: REFRIGERATED TRAILER ]</div>
+        <div class="service-detail-body">
+          <h2>Refrigerated Transportation</h2>
+          <p class="svc-tagline">Temperature-controlled cargo from −25°C to +25°C</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p>Our reefer fleet ensures stable temperature throughout the journey. Suitable for food, pharmaceuticals, cosmetics and other temperature-sensitive goods with full ATP certification.</p>
+              <h4 style="margin-top:1.25rem;">Advantages:</h4>
+              <ul class="advantages-list">
+                <li>Stable temperature control</li>
+                <li>ATP-certified trailers</li>
+                <li>Real-time temperature logging</li>
+                <li>HACCP compliance</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div class="spec-row"><span class="spec-label">Temperature:</span><span class="spec-val">−25°C to +25°C</span></div>
+              <div class="spec-row"><span class="spec-label">Load capacity:</span><span class="spec-val">up to 22,000 kg</span></div>
+              <div class="spec-row"><span class="spec-label">Trailer type:</span><span class="spec-val">ATP-certified reefer</span></div>
+              <div class="spec-row"><span class="spec-label">Monitoring:</span><span class="spec-val">Real-time temp log</span></div>
+              <div class="spec-row"><span class="spec-label">Delivery time:</span><span class="spec-val">1–6 business days</span></div>
+              <div class="spec-row"><span class="spec-label">Certification:</span><span class="spec-val">ATP / FRC</span></div>
+              <a href="checkout.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Request Reefer Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLATBED -->
+      <div class="service-detail-card" id="flatbed">
+        <div class="service-detail-img">[ PHOTO: FLATBED TRAILER ]</div>
+        <div class="service-detail-body">
+          <h2>Flatbed &amp; Oversized Transportation</h2>
+          <p class="svc-tagline">Heavy machinery, equipment, and oversized cargo</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p>Flatbed trailers are perfect for cargo that cannot be loaded through standard doors — construction machinery, industrial equipment, steel structures, and oversized items.</p>
+              <h4 style="margin-top:1.25rem;">Advantages:</h4>
+              <ul class="advantages-list">
+                <li>No height restrictions</li>
+                <li>Easy side / crane loading</li>
+                <li>Lashing certified</li>
+                <li>Pilot escort available</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div class="spec-row"><span class="spec-label">Load capacity:</span><span class="spec-val">up to 48,000 kg</span></div>
+              <div class="spec-row"><span class="spec-label">Trailer types:</span><span class="spec-val">Flatbed, Lowboy, Extendable</span></div>
+              <div class="spec-row"><span class="spec-label">Width:</span><span class="spec-val">up to 3.0 m standard</span></div>
+              <div class="spec-row"><span class="spec-label">Permits:</span><span class="spec-val">All EU countries</span></div>
+              <div class="spec-row"><span class="spec-label">Delivery time:</span><span class="spec-val">2–7 business days</span></div>
+              <div class="spec-row"><span class="spec-label">Escort:</span><span class="spec-val">Available on request</span></div>
+              <a href="checkout.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Request Flatbed Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HAZMAT -->
+      <div class="service-detail-card" id="hazmat">
+        <div class="service-detail-img">[ PHOTO: HAZMAT TRANSPORT ]</div>
+        <div class="service-detail-body">
+          <h2>Dangerous Goods Transportation (Hazmat)</h2>
+          <p class="svc-tagline">ADR-certified transport for all hazard classes</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p>We transport dangerous goods under full ADR compliance. All our Hazmat drivers hold ADR certificates. We handle classes 1–9 with proper documentation, placarding, and safety equipment.</p>
+              <h4 style="margin-top:1.25rem;">Advantages:</h4>
+              <ul class="advantages-list">
+                <li>ADR-certified drivers</li>
+                <li>All hazard classes 1–9</li>
+                <li>Full documentation support</li>
+                <li>Emergency response plan</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div class="spec-row"><span class="spec-label">ADR Classes:</span><span class="spec-val">1, 2, 3, 4, 5, 6, 7, 8, 9</span></div>
+              <div class="spec-row"><span class="spec-label">Certification:</span><span class="spec-val">ADR 2023/2025</span></div>
+              <div class="spec-row"><span class="spec-label">Documentation:</span><span class="spec-val">SDS, DGN included</span></div>
+              <div class="spec-row"><span class="spec-label">Equipment:</span><span class="spec-val">ADR safety kit standard</span></div>
+              <div class="spec-row"><span class="spec-label">Permits:</span><span class="spec-val">EU-wide</span></div>
+              <div class="spec-row"><span class="spec-label">Insurance:</span><span class="spec-val">Hazmat-specific policy</span></div>
+              <a href="checkout.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Request Hazmat Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CROSS-BORDER -->
+      <div class="service-detail-card" id="cross">
+        <div class="service-detail-img">[ PHOTO: BORDER CROSSING ]</div>
+        <div class="service-detail-body">
+          <h2>Cross-Border &amp; International Transportation</h2>
+          <p class="svc-tagline">Seamless customs clearance across 48 countries</p>
+          <hr>
+          <div class="detail-cols">
+            <div class="detail-desc">
+              <h4>Service Description</h4>
+              <p>Our cross-border expertise covers EU and non-EU countries. We handle T1/T2 transit documents, TIR carnets, phytosanitary certificates, EUR1, CMR and full customs brokerage services.</p>
+              <h4 style="margin-top:1.25rem;">Advantages:</h4>
+              <ul class="advantages-list">
+                <li>Customs brokerage included</li>
+                <li>TIR / T1 / T2 documents</li>
+                <li>EUR.1 / CMR support</li>
+                <li>48 countries covered</li>
+              </ul>
+            </div>
+            <div class="detail-sidebar-box">
+              <h4>Service Details</h4>
+              <hr>
+              <div class="spec-row"><span class="spec-label">Coverage:</span><span class="spec-val">48 European countries</span></div>
+              <div class="spec-row"><span class="spec-label">Documents:</span><span class="spec-val">CMR, TIR, EUR.1, T1/T2</span></div>
+              <div class="spec-row"><span class="spec-label">Customs:</span><span class="spec-val">Full brokerage service</span></div>
+              <div class="spec-row"><span class="spec-label">Non-EU:</span><span class="spec-val">Ukraine, UK, Turkey, CH</span></div>
+              <div class="spec-row"><span class="spec-label">Insurance:</span><span class="spec-val">CMR liability covered</span></div>
+              <div class="spec-row"><span class="spec-label">Languages:</span><span class="spec-val">EN, DE, PL, UK, RU</span></div>
+              <a href="checkout.html" class="btn btn-primary btn-full" style="margin-top:1rem;">Request Cross-Border Quote</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo-box" style="width:36px;height:36px;font-size:10px;">VTK</div>
+      <div>
+        <strong>TRIBLE TRAILER INC.</strong>
+        <span>DOT# 4521890 · MC# 1187334 · USDOT Licensed &amp; Insured</span>
+      </div>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="services.html">Services</a>
+      <a href="garage.html">Fleet</a>
+      <a href="about.html">About</a>
+      <a href="checkout.html">Contacts</a>
+      <a href="#">Privacy</a>
+    </nav>
+    <ul class="social-links" aria-label="Social media">
+      <li><a href="#" aria-label="Telegram"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.53 14.316l-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.288.27z"/></svg></a></li>
+      <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a></li>
+      <li><a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a></li>
+    </ul>
+  </div>
+  <div class="footer-copy">© 2025 VTK Trible Trailer Inc. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
