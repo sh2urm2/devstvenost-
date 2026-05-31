@@ -1,18 +1,6 @@
-/* ================================================================
-   VTK Trible Trailer Inc. — style.css
-   Lab 03: Reset, CSS Variables, Typography, Colors, :hover
-   Lab 04: Flexbox — header, nav, product cards (flex-direction:column)
-   Lab 05: CSS Grid — page-layout, trucks-grid, media queries
-   Lab 06: Forms — fieldset/legend, input states, :valid/:invalid
-   Lab 07: SVG icons (inline), hamburger (CSS-only), mobile @media
-================================================================ */
 
-
-/* ---------------------------------------------------------------
-   LAB 03 — CSS Reset & box-sizing
---------------------------------------------------------------- */
 *, *::before, *::after {
-  box-sizing: border-box;   /* Lab 03: border-box на всіх елементах */
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -20,26 +8,22 @@
 html { scroll-behavior: smooth; }
 
 img {
-  max-width: 100%;          /* Lab 04: зображення в картці */
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   display: block;
 }
 
-
-/* ---------------------------------------------------------------
-   LAB 03 — CSS Variables (:root)
---------------------------------------------------------------- */
 :root {
-  --primary-color: #f2730d;      /* фірмовий помаранчевий */
-  --primary-dark:  #c25a08;      /* hover стан */
-  --dark-bg:       #1a1f29;      /* шапка / футер */
-  --dark-bg2:      #1f2430;      /* page-header */
-  --dark-bg3:      #212633;      /* hero */
-  --text-dark:     #1f242e;      /* основний текст */
-  --text-light:    #6b7280;      /* приглушений текст */
-  --bg-color:      #f9fafb;      /* фон сторінки */
-  --border:        #e2e4e9;      /* бордери */
+  --primary-color: #f2730d;      
+  --primary-dark:  #c25a08;      
+  --dark-bg:       #1a1f29;
+  --dark-bg2:      #1f2430;
+  --dark-bg3:      #212633;
+  --text-dark:     #1f242e;
+  --text-light:    #6b7280;
+  --bg-color:      #f9fafb;
+  --border:        #e2e4e9;
   --white:         #ffffff;
   --font-main:     'Barlow', system-ui, sans-serif;
   --font-display:  'Barlow Condensed', 'Barlow', sans-serif;
@@ -47,11 +31,8 @@ img {
 }
 
 
-/* ---------------------------------------------------------------
-   LAB 03 — Глобальна типографіка
---------------------------------------------------------------- */
 body {
-  font-family: var(--font-main);   /* Lab 03: var() */
+  font-family: var(--font-main);
   font-size: 15px;
   line-height: 1.65;
   color: var(--text-dark);
@@ -73,7 +54,6 @@ h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; colo
 p { margin-bottom: 0.75rem; }
 p:last-child { margin-bottom: 0; }
 
-/* Lab 03: посилання + :hover псевдоклас */
 a {
   text-decoration: none;
   color: var(--primary-color);
@@ -89,9 +69,6 @@ button {
 }
 
 
-/* ---------------------------------------------------------------
-   LAB 03 — Кнопка (.btn) — клас + :hover стан
---------------------------------------------------------------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -131,11 +108,11 @@ button {
 
 .btn-sm { height: 34px; padding: 0 16px; font-size: 12px; margin-top: auto; }
 
-/* Lab 07: кнопка кошика з inline SVG */
+
 .btn-cart {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;               /* Lab 04: gap між SVG та текстом */
+  gap: 0.5rem;
   background: var(--primary-color);
   color: var(--white);
   padding: 0 18px;
@@ -155,20 +132,14 @@ button {
 }
 
 
-/* ---------------------------------------------------------------
-   Смуга над навігацією
---------------------------------------------------------------- */
 .nav-strip { height: 4px; background: var(--primary-color); }
 
 
-/* ---------------------------------------------------------------
-   LAB 04 — HEADER (Flexbox)
-   justify-content: space-between | align-items: center
---------------------------------------------------------------- */
+
 .header {
-  display: flex;                        /* Lab 04 */
-  justify-content: space-between;       /* Lab 04: лого ліворуч, кошик праворуч */
-  align-items: center;                  /* Lab 04: вирівнювання по вертикалі */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 5%;
   height: var(--nav-h);
   background-color: var(--dark-bg);
@@ -178,7 +149,7 @@ button {
   z-index: 200;
 }
 
-/* Логотип */
+
 .nav-logo {
   display: flex;
   align-items: center;
@@ -202,12 +173,12 @@ button {
 }
 .nav-logo-text span { font-size: 10px; color: #808080; }
 
-/* Lab 04: навігаційне меню — ul з flex + gap, прибираємо маркери */
+
 .main-nav ul {
-  display: flex;              /* Lab 04 */
+  display: flex;
   align-items: center;
-  gap: 2rem;                  /* Lab 04: відступ між пунктами */
-  list-style: none;           /* Lab 04: прибрати маркери */
+  gap: 2rem;
+  list-style: none;
 }
 .main-nav ul a {
   font-size: 13px; color: #c7c7c7; font-weight: 500;
@@ -223,14 +194,12 @@ button {
   background: var(--primary-color); border-radius: 2px;
 }
 
-/* Блок дій користувача (правий край) */
+
 .user-actions { display: flex; align-items: center; gap: 1rem; }
 
-/* ---------------------------------------------------------------
-   LAB 07 — Hamburger button (прихований на десктопі)
---------------------------------------------------------------- */
+
 .menu-toggle {
-  display: none;             /* Lab 07: прихований за замовчуванням */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
@@ -240,9 +209,6 @@ button {
 }
 
 
-/* ---------------------------------------------------------------
-   Загальні секції
---------------------------------------------------------------- */
 .section { padding: 56px 5%; }
 .section-header { margin-bottom: 2.5rem; }
 .section-title { font-size: 1.55rem; color: var(--text-dark); }
@@ -259,9 +225,7 @@ button {
 .breadcrumb a:hover { color: var(--primary-color); }
 
 
-/* ---------------------------------------------------------------
-   HERO
---------------------------------------------------------------- */
+
 .hero {
   background: var(--dark-bg3);
   padding: 64px 5%;
@@ -297,7 +261,6 @@ button {
 .truck-icon { font-size: 72px; }
 .hero-img-label { font-size: 10px; color: #444; letter-spacing: 0.12em; }
 
-/* Stats */
 .stats-bar {
   background: #f0f1f4;
   padding: 20px 5%;
@@ -315,52 +278,47 @@ button {
 .stat-label { font-size: 12px; color: var(--text-light); margin-top: 4px; }
 
 
-/* ---------------------------------------------------------------
-   LAB 04 — Products Grid (flex-wrap)
---------------------------------------------------------------- */
+*/
 .products-grid {
-  display: flex;                /* Lab 04 */
-  flex-wrap: wrap;              /* Lab 04: перенесення рядків */
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  justify-content: center;      /* Lab 04: центрування якщо мало карток */
+  justify-content: center;
 }
 
-/* Lab 04 — Product Card (flex-direction: column) */
+
 .product-card {
-  display: flex;                /* Lab 04 */
-  flex-direction: column;       /* Lab 04: елементи у стовпець */
-  justify-content: space-between; /* Lab 04: кнопка завжди внизу */
-  flex-basis: 300px;            /* Lab 04: базова ширина */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  flex-basis: 300px;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 1.25rem;
   background: var(--white);
-  transition: transform 0.3s, box-shadow 0.3s;  /* Lab 04: анімація */
+  transition: transform 0.3s, box-shadow 0.3s;  
 }
 .product-card:hover {
-  transform: translateY(-5px);  /* Lab 04: ефект підняття */
+  transform: translateY(-5px);  
   box-shadow: 0 4px 16px rgba(242,115,13,.12);
   border-color: var(--primary-color);
 }
 
-/* Service card всередині products-grid */
+
 .service-card .service-icon { font-size: 2rem; margin-bottom: 0.75rem; }
 .service-card .service-info h3 { font-size: 14px; font-weight: 700; margin-bottom: 0.4rem; color: var(--text-dark); font-family: var(--font-main); text-transform: none; letter-spacing: normal; }
 .service-card .service-info p  { font-size: 12px; color: var(--text-light); line-height: 1.6; margin-bottom: 1rem; }
 
 
-/* ---------------------------------------------------------------
-   LAB 05 — Page Layout (CSS Grid: sidebar + content)
---------------------------------------------------------------- */
 .page-layout {
-  display: grid;                              /* Lab 05 */
-  grid-template-columns: 250px 1fr;           /* Lab 05: 250px сайдбар + 1fr контент */
+  display: grid;
+  grid-template-columns: 250px 1fr;
   gap: 2rem;
   padding: 2rem 5%;
   align-items: start;
 }
 
-/* Lab 05: Sidebar */
+
 .sidebar {
   background: var(--white);
   border: 1px solid var(--border);
@@ -393,7 +351,7 @@ button {
   font-weight: 600;
 }
 
-/* Services detail cards — стек у колонку */
+
 .products-content { display: flex; flex-direction: column; gap: 2rem; }
 
 .service-detail-card {
@@ -434,17 +392,14 @@ button {
 .spec-val   { font-size: 12px; font-weight: 600; text-align: right; }
 
 
-/* ---------------------------------------------------------------
-   LAB 05 — Trucks Grid (repeat auto-fill)
---------------------------------------------------------------- */
+
 .trucks-grid {
-  display: grid;                                          /* Lab 05 */
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Lab 05 */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 1.5rem;
   padding: 1.5rem 5% 3rem;
 }
 
-/* Truck card = product-card без горизонтального padding */
 .truck-card { padding: 0; }
 
 .truck-img {
@@ -487,7 +442,7 @@ button {
 }
 .btn-book:hover { background: var(--primary-dark); color: var(--white); }
 
-/* Filter bar */
+
 .filter-bar {
   background: #f4f5f8;
   padding: 12px 5%;
@@ -507,9 +462,7 @@ button {
 .filter-btn.active { background: var(--primary-color); color: var(--white); font-weight: 600; }
 
 
-/* ---------------------------------------------------------------
-   About page
---------------------------------------------------------------- */
+
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -523,9 +476,6 @@ button {
 .values-list p { font-size: 12px; color: var(--text-light); margin: 0; }
 
 
-/* ---------------------------------------------------------------
-   LAB 06 — Contacts / Checkout layout
---------------------------------------------------------------- */
 .contacts-layout {
   display: grid;
   grid-template-columns: 1fr 360px;
@@ -534,7 +484,7 @@ button {
   align-items: start;
 }
 
-/* Form box */
+
 .form-box {
   background: var(--white);
   border: 1px solid var(--border);
@@ -545,10 +495,10 @@ button {
 .form-sub     { font-size: 12px; color: var(--text-light); margin-bottom: 1rem; }
 .form-box > hr { border: none; border-top: 1px solid var(--border); margin: 1rem 0; }
 
-/* Lab 06: checkout-form */
+
 .checkout-form { }
 
-/* Lab 06: fieldset + legend */
+
 fieldset {
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -563,10 +513,10 @@ legend {
   text-transform: uppercase; letter-spacing: 0.06em;
 }
 
-/* Lab 06: form-group — flex column */
+
 .form-group {
   display: flex;
-  flex-direction: column;        /* Lab 06 */
+  flex-direction: column;
   margin-bottom: 1rem;
 }
 .form-group:last-child { margin-bottom: 0; }
@@ -578,7 +528,7 @@ legend {
   text-transform: uppercase; letter-spacing: 0.04em;
 }
 
-/* Lab 06: input / select / textarea */
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -603,7 +553,7 @@ legend {
 .form-group input::placeholder,
 .form-group textarea::placeholder { color: #bbb; }
 
-/* Lab 06: псевдокласи :valid / :invalid */
+
 .form-group input:invalid:not(:placeholder-shown):not(:focus) {
   border-color: #e53e3e;
 }
@@ -611,18 +561,18 @@ legend {
   border-color: #38a169;
 }
 
-/* Lab 06: радіо-кнопки */
+
 .form-radio-group { display: flex; flex-direction: column; gap: 10px; }
 .form-radio { display: flex; align-items: center; gap: 10px; cursor: pointer; }
 .form-radio input[type="radio"] { accent-color: var(--primary-color); width: 16px; height: 16px; cursor: pointer; }
 .form-radio label { font-size: 13px; cursor: pointer; }
 
-/* Lab 06: чекбокс */
+
 .form-check { display: flex; align-items: flex-start; gap: 10px; margin-top: 1rem; font-size: 13px; }
 .form-check input[type="checkbox"] { accent-color: var(--primary-color); width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px; cursor: pointer; }
 .form-check label { cursor: pointer; line-height: 1.5; }
 
-/* Двоколонкова сітка полів */
+
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -630,7 +580,7 @@ legend {
   margin-bottom: 1rem;
 }
 
-/* Contacts sidebar */
+
 .contacts-sidebar { display: flex; flex-direction: column; gap: 1.25rem; }
 
 .office-card { background: var(--dark-bg); border-radius: 8px; padding: 1.5rem; }
@@ -661,10 +611,6 @@ legend {
 .dot-row { font-size: 10px; color: var(--text-light); margin-top: 8px; line-height: 1.7; }
 
 
-/* ---------------------------------------------------------------
-   LAB 07 — Inline SVG: Social links
-   Колір задається через fill: currentColor + color на <a>
---------------------------------------------------------------- */
 .social-links {
   list-style: none;
   display: flex;
@@ -675,18 +621,14 @@ legend {
   width: 40px; height: 40px;
   border-radius: 6px;
   background: #f0f1f4;
-  color: var(--text-light);            /* Lab 07: SVG колір через currentColor */
+  color: var(--text-light);
   transition: background 0.2s, color 0.2s;
 }
 .social-links a:hover {
-  background: var(--primary-color);   /* Lab 07: :hover змінює fill SVG */
+  background: var(--primary-color);
   color: var(--white);
 }
 
-
-/* ---------------------------------------------------------------
-   FOOTER (Lab 07: SVG соцмережі)
---------------------------------------------------------------- */
 .site-footer { background: var(--dark-bg); }
 
 .footer-inner {
@@ -718,16 +660,12 @@ legend {
 }
 
 
-/* ---------------------------------------------------------------
-   LAB 05 + LAB 07 — Media Queries (адаптивний дизайн)
---------------------------------------------------------------- */
 
-/* Планшет ≤ 1024px */
+
 @media screen and (max-width: 1024px) {
 
-  /* Lab 07: показати бургер, сховати десктопне меню */
   .main-nav   { display: none; }
-  .menu-toggle { display: block; }      /* Lab 07 */
+  .menu-toggle { display: block; }
 
   .hero { grid-template-columns: 1fr; padding: 40px 5%; }
   .hero-visual { display: none; }
@@ -739,7 +677,7 @@ legend {
   .stat:nth-child(2) { border-right: none; }
   .stat:last-child   { border-right: none; }
 
-  /* Lab 05: сайдбар у рядок */
+   
   .page-layout { grid-template-columns: 1fr; }
   .sidebar { position: static; display: flex; flex-wrap: wrap; gap: 6px; }
   .sidebar h3 { width: 100%; margin-bottom: 0; }
@@ -752,10 +690,10 @@ legend {
   .contacts-layout { grid-template-columns: 1fr; }
 }
 
-/* Мобільний ≤ 768px — Lab 05 основний брейкпоінт */
+
 @media screen and (max-width: 768px) {
 
-  /* Lab 07 */
+   
   h2 { font-size: 1.4rem; }
 
   .header { padding: 0 16px; }
@@ -769,7 +707,7 @@ legend {
 
   .section { padding: 36px 16px; }
 
-  /* Lab 05: один стовпець на мобільному */
+   
   .page-layout { grid-template-columns: 1fr; padding: 1rem 16px; }
 
   .trucks-grid { padding: 12px 16px 2rem; }
@@ -786,7 +724,7 @@ legend {
   .footer-copy  { padding: 12px 16px; }
 }
 
-/* Маленький мобільний ≤ 480px */
+
 @media screen and (max-width: 480px) {
   .hero-text h1 { font-size: 1.5rem; }
   .stats-bar { grid-template-columns: 1fr 1fr; }
