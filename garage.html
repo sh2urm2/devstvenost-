@@ -36,6 +36,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12"/>
       </svg>
       Get a Quote
+      <span class="cart-counter">0</span>
     </a>
   </div>
   <button class="menu-toggle" aria-label="Open menu">
@@ -63,153 +64,8 @@
   </div>
 
   <!-- Lab 05: CSS Grid — repeat(auto-fill, minmax) -->
-  <div class="trucks-grid" id="all">
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-free">Available</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">Scania R 500 4×2</h3>
-        <p class="truck-type">Dry Van · 53' — 45,000 lbs</p>
-        <hr>
-        <p class="truck-route">Route: IL → TX</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-transit">In Transit</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">Volvo FH 500 Globetrotter</h3>
-        <p class="truck-type">Reefer · 48' — 43,000 lbs</p>
-        <hr>
-        <p class="truck-route">Route: FL → CA</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-service">In Service</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">Scania S 770 6×4</h3>
-        <p class="truck-type">Flatbed · 48' — 48,000 lbs</p>
-        <hr>
-        <p class="truck-route">Route: OH → WA</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-free">Available</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">DAF XF105 410 6×4</h3>
-        <p class="truck-type">Dry Van · 53' — 45,000 lbs</p>
-        <hr>
-        <p class="truck-route">Base: Chicago, IL</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-transit">In Transit</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">MAN TGX 18.510 6×2</h3>
-        <p class="truck-type">Reefer · 53' — 43,500 lbs</p>
-        <hr>
-        <p class="truck-route">Route: TX → NY</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-free">Available</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">Mercedes ACTROS 1848</h3>
-        <p class="truck-type">Step Deck · 48' — 46,000 lbs</p>
-        <hr>
-        <p class="truck-route">Base: Dallas, TX</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-transit">In Transit</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">Renault T 480 4×2</h3>
-        <p class="truck-type">Dry Van · 53' — 45,000 lbs</p>
-        <hr>
-        <p class="truck-route">Route: CA → MN</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="product-card truck-card">
-      <div class="truck-img">
-        <span class="vtk-tag">VTK</span>
-        🚛
-        <span class="status-badge status-free">Available</span>
-      </div>
-      <div class="truck-info">
-        <h3 class="truck-name">Iveco S-WAY 570 6×2</h3>
-        <p class="truck-type">Flatbed · 40' — 48,000 lbs</p>
-        <hr>
-        <p class="truck-route">Route: TX → TN</p>
-        <p class="truck-specs">GPS · ABS · ELD · Dashcam</p>
-        <div class="truck-actions">
-          <a href="checkout.html" class="btn-book">Book</a>
-        </div>
-      </div>
-    </article>
-
-  </div>
+  <!-- Lab 09-10: cards are now rendered from the `trucks` array in assets/js/main.js -->
+  <div class="trucks-grid" id="all"></div>
 </main>
 
 <footer class="site-footer">
@@ -237,5 +93,7 @@
   <div class="footer-copy">© 2025 VTK Trible Trailer Inc. All rights reserved.</div>
 </footer>
 
+<!-- Lab 09-10: dynamic rendering of the fleet + booking cart logic -->
+<script src="assets/js/main.js" type="module"></script>
 </body>
 </html>
