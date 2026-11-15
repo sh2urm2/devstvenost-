@@ -2,102 +2,14 @@
 // Лаба 9: База даних автопарку (масив об'єктів замість статичної розмітки)
 // =========================================================
 const trucks = [
-  {
-    id: 1,
-    name: "Scania R 500 4×2",
-    type: "Dry Van",
-    dataType: "dryvan",
-    capacity: "53' — 45,000 lbs",
-    route: "Route: IL → TX",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "free",
-    statusLabel: "Available",
-    rate: 1850,
-  },
-  {
-    id: 2,
-    name: "Volvo FH 500 Globetrotter",
-    type: "Reefer",
-    dataType: "reefer",
-    capacity: "48' — 43,000 lbs",
-    route: "Route: FL → CA",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "transit",
-    statusLabel: "In Transit",
-    rate: 2400,
-  },
-  {
-    id: 3,
-    name: "Scania S 770 6×4",
-    type: "Flatbed",
-    dataType: "flatbed",
-    capacity: "48' — 48,000 lbs",
-    route: "Route: OH → WA",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "service",
-    statusLabel: "In Service",
-    rate: 2100,
-  },
-  {
-    id: 4,
-    name: "DAF XF105 410 6×4",
-    type: "Dry Van",
-    dataType: "dryvan",
-    capacity: "53' — 45,000 lbs",
-    route: "Base: Chicago, IL",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "free",
-    statusLabel: "Available",
-    rate: 1700,
-  },
-  {
-    id: 5,
-    name: "MAN TGX 18.510 6×2",
-    type: "Reefer",
-    dataType: "reefer",
-    capacity: "53' — 43,500 lbs",
-    route: "Route: TX → NY",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "transit",
-    statusLabel: "In Transit",
-    rate: 2550,
-  },
-  {
-    id: 6,
-    name: "Mercedes ACTROS 1848",
-    type: "Step Deck",
-    dataType: "stepdeck",
-    capacity: "48' — 46,000 lbs",
-    route: "Base: Dallas, TX",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "free",
-    statusLabel: "Available",
-    rate: 1950,
-  },
-  {
-    id: 7,
-    name: "Renault T 480 4×2",
-    type: "Dry Van",
-    dataType: "dryvan",
-    capacity: "53' — 45,000 lbs",
-    route: "Route: CA → MN",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "transit",
-    statusLabel: "In Transit",
-    rate: 1800,
-  },
-  {
-    id: 8,
-    name: "Iveco S-WAY 570 6×2",
-    type: "Flatbed",
-    dataType: "flatbed",
-    capacity: "40' — 48,000 lbs",
-    route: "Route: TX → TN",
-    specs: "GPS · ABS · ELD · Dashcam",
-    status: "free",
-    statusLabel: "Available",
-    rate: 2050,
-  },
+  { id: 1, name: "Scania R 500 4×2", type: "Dry Van", dataType: "dryvan", capacity: "53' — 45,000 lbs", route: "Route: IL → TX", specs: "GPS · ABS · ELD · Dashcam", status: "free", statusLabel: "Available", rate: 1850 },
+  { id: 2, name: "Volvo FH 500 Globetrotter", type: "Reefer", dataType: "reefer", capacity: "48' — 43,000 lbs", route: "Route: FL → CA", specs: "GPS · ABS · ELD · Dashcam", status: "transit", statusLabel: "In Transit", rate: 2400 },
+  { id: 3, name: "Scania S 770 6×4", type: "Flatbed", dataType: "flatbed", capacity: "48' — 48,000 lbs", route: "Route: OH → WA", specs: "GPS · ABS · ELD · Dashcam", status: "service", statusLabel: "In Service", rate: 2100 },
+  { id: 4, name: "DAF XF105 410 6×4", type: "Dry Van", dataType: "dryvan", capacity: "53' — 45,000 lbs", route: "Base: Chicago, IL", specs: "GPS · ABS · ELD · Dashcam", status: "free", statusLabel: "Available", rate: 1700 },
+  { id: 5, name: "MAN TGX 18.510 6×2", type: "Reefer", dataType: "reefer", capacity: "53' — 43,500 lbs", route: "Route: TX → NY", specs: "GPS · ABS · ELD · Dashcam", status: "transit", statusLabel: "In Transit", rate: 2550 },
+  { id: 6, name: "Mercedes ACTROS 1848", type: "Step Deck", dataType: "stepdeck", capacity: "48' — 46,000 lbs", route: "Base: Dallas, TX", specs: "GPS · ABS · ELD · Dashcam", status: "free", statusLabel: "Available", rate: 1950 },
+  { id: 7, name: "Renault T 480 4×2", type: "Dry Van", dataType: "dryvan", capacity: "53' — 45,000 lbs", route: "Route: CA → MN", specs: "GPS · ABS · ELD · Dashcam", status: "transit", statusLabel: "In Transit", rate: 1800 },
+  { id: 8, name: "Iveco S-WAY 570 6×2", type: "Flatbed", dataType: "flatbed", capacity: "40' — 48,000 lbs", route: "Route: TX → TN", specs: "GPS · ABS · ELD · Dashcam", status: "free", statusLabel: "Available", rate: 2050 },
 ];
 
 // =========================================================
@@ -134,7 +46,35 @@ function renderTrucks(list) {
   trucksGrid.innerHTML = htmlString;
 }
 
-renderTrucks(trucks);
+// =========================================================
+// Лаба 11: Симуляція мережевих затримок (Promise + async/await)
+// =========================================================
+function fetchTrucks() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(trucks);
+      // reject(new Error("Could not connect to the fleet database"));
+    }, 1500);
+  });
+}
+
+async function initGarage() {
+  const loader = document.getElementById("loader");
+
+  loader.classList.remove("hidden");
+  trucksGrid.innerHTML = "";
+
+  try {
+    const data = await fetchTrucks();
+    loader.classList.add("hidden");
+    renderTrucks(data);
+  } catch (error) {
+    loader.classList.add("hidden");
+    trucksGrid.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+  }
+}
+
+initGarage();
 
 // =========================================================
 // Лаба 10: Кошик бронювань (Event Delegation + array/reduce logic)
@@ -147,7 +87,6 @@ trucksGrid.addEventListener("click", (event) => {
     const truckId = Number(event.target.dataset.id);
     const selectedTruck = trucks.find((t) => t.id === truckId);
     addToCart(selectedTruck);
-
     event.target.textContent = "Booked ✓";
     event.target.classList.add("in-cart");
   }
