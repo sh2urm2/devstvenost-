@@ -741,3 +741,5 @@ legend {
   .nav-logo-text span { display: none; }
   .footer-nav { gap: 10px; }
 }
+
+.hidden { display: none !important; }
