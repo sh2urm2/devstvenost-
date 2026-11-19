@@ -118,4 +118,99 @@ function updateUI() {
 
   console.log("Поточний кошик бронювань:", cart);
   console.log("Загальна сума:", calculateTotal(), "USD");
+
+  renderCartItems(); // Лаба 12: тримаємо модалку синхронізованою з масивом cart
 }
+
+// =========================================================
+// Лаба 12: Модальне вікно кошика (DOM + classList)
+// =========================================================
+const cartButton = document.querySelector(".btn-cart");
+const cartOverlay = document.getElementById("cartOverlay");
+const closeBtn = document.getElementById("closeCartBtn");
+const cartItemsContainer = document.getElementById("cartItemsContainer");
+const cartTotalSum = document.getElementById("cartTotalSum");
+
+function openCartModal() {
+  renderCartItems();
+  cartOverlay.classList.remove("hidden");
+}
+
+function closeCartModal() {
+  cartOverlay.classList.add("hidden");
+}
+
+function renderCartItems() {
+  if (cart.length === 0) {
+    cartItemsContainer.innerHTML = `<p class="cart-empty">Your booking cart is empty.</p>`;
+  } else {
+    cartItemsContainer.innerHTML = cart
+      .map((item) => {
+        return `
+          <div class="cart-item">
+            <span class="cart-item-icon">🚛</span>
+            <div class="cart-item-info">
+              <p class="cart-item-name">${item.name}</p>
+              <p class="cart-item-meta">${item.type} · $${item.rate.toLocaleString("en-US")} / booking</p>
+            </div>
+            <div class="cart-item-qty">
+              <button class="qty-btn" data-action="dec" data-id="${item.id}" aria-label="Decrease">−</button>
+              <span>${item.quantity}</span>
+              <button class="qty-btn" data-action="inc" data-id="${item.id}" aria-label="Increase">+</button>
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+  }
+
+  cartTotalSum.textContent = calculateTotal().toLocaleString("en-US");
+}
+
+// Кнопка кошика в Header — це <a href="checkout.html">, тому блокуємо перехід
+cartButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  openCartModal();
+});
+
+closeBtn.addEventListener("click", closeCartModal);
+
+// Закриття кліком по темному фону повз вікно
+cartOverlay.addEventListener("click", (event) => {
+  if (event.target === cartOverlay) {
+    closeCartModal();
+  }
+});
+
+// Закриття клавішею Esc
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeCartModal();
+  }
+});
+
+// Делегування подій для кнопок "+" / "−" всередині модалки
+cartItemsContainer.addEventListener("click", (event) => {
+  const btn = event.target.closest(".qty-btn");
+  if (!btn) return;
+
+  const id = Number(btn.dataset.id);
+  const item = cart.find((i) => i.id === id);
+
+  if (btn.dataset.action === "inc") {
+    item.quantity += 1;
+  } else {
+    item.quantity -= 1;
+    if (item.quantity === 0) {
+      cart = cart.filter((i) => i.id !== id);
+      // повертаємо кнопку "Book" на картці у початковий стан
+      const bookBtn = trucksGrid.querySelector(`.btn-book[data-id="${id}"]`);
+      if (bookBtn) {
+        bookBtn.textContent = "Book";
+        bookBtn.classList.remove("in-cart");
+      }
+    }
+  }
+
+  updateUI();
+});
