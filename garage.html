@@ -94,6 +94,23 @@
   <div class="footer-copy">© 2025 VTK Trible Trailer Inc. All rights reserved.</div>
 </footer>
 
+<div class="modal-overlay hidden" id="cartOverlay">
+  <div class="modal-window">
+    <div class="modal-header">
+      <h2>Your Bookings</h2>
+      <button class="close-btn" id="closeCartBtn" aria-label="Close">&times;</button>
+    </div>
+
+    <div class="cart-items" id="cartItemsContainer">
+      <p class="cart-empty">Your booking cart is empty.</p>
+    </div>
+
+    <div class="modal-footer">
+      <h3>Total: $<span id="cartTotalSum">0</span></h3>
+      <a href="checkout.html" class="btn btn-primary" id="checkoutBtn">Request Quote</a>
+    </div>
+  </div>
+</div>
 <!-- Lab 09-10: dynamic rendering of the fleet + booking cart logic -->
 <script src="assets/js/main.js" type="module"></script>
 </body>
